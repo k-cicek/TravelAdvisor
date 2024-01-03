@@ -39,10 +39,10 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(6)})`,
+    paddingLeft: `calc(1em + ${theme.spacing(6)})!important`,
     transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: { width: "20ch" },
+    width: "100% !important",
+    [theme.breakpoints.up("md")]: { width: "20ch !important" },
   },
 }));
 
