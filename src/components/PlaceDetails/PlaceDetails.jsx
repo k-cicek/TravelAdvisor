@@ -15,21 +15,20 @@ import Rating from "@mui/material/Rating";
 
 import useStyles from "./style.js";
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
   const classes = useStyles();
 
-  if (!place.photo || !place.name) {
-    return null;
-  }
+  if (selected)
+    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
     <Card elevation={6}>
       <CardMedia
         style={{ height: 350 }}
         image={
-          place.photo
+          place.photo && place.photo.images && place.photo.images.large
             ? place.photo.images.large.url
-            : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
+            : "https://www.akinsoft.com.tr/sektorel-cozumler/resim/restoran/restoran-obj.webp"
         }
         title={place.name}
       />
@@ -38,6 +37,12 @@ const PlaceDetails = ({ place }) => {
         <Typography gutterBottom variant="h5">
           {place.name}
         </Typography>
+        <Box display="flex" justifyContent="space-between">
+          <Rating value={Number(place.rating)} readOnly />
+          <Typography gutterBottom variant="subtitle1">
+            out of {place.num_reviews} reviews
+          </Typography>
+        </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography variant="subtitle1">Price</Typography>
           <Typography gutterBottom variant="subtitle1">
