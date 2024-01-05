@@ -4,6 +4,10 @@ const URL =
   "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
 
 export const getPlacesData = async (sw, ne) => {
+  if (!sw || !ne) {
+    console.log("Invalid coordinates");
+    return;
+  }
   try {
     const {
       data: { data },
