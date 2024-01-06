@@ -24,7 +24,4 @@ Travel data is received via RapidAPI.
 ### User Location and Map Operations:
 User's location is determined initially, map interactions update location
 
-### Demo Link
-
-You can view the site here [Click here]()
 
