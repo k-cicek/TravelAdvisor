@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   list: {
     height: "75vh",
     overflow: "auto",
+    marginTop: "0px !important",
   },
 }));
 
